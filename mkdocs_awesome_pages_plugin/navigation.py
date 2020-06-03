@@ -12,7 +12,6 @@ from .utils import dirname, basename, join_paths
 
 NavigationItem = Union[Page, Section, Link]
 
-
 class ArrangeEntryNotFound(Warning):
     def __init__(self, entry: str, context: str):
         super().__init__('Arrange entry "{entry}" not found. [{context}]'.format(entry=entry, context=context))
