@@ -148,7 +148,7 @@ class NavigationMeta:
     def _common_dirname(paths: List[Optional[str]]) -> Optional[str]:
         print('_common_dirname:', paths)
         if paths:
-            dirnames = [dirname(path) for path in paths]
+            dirnames = [dirname(path) for path in paths if dirname(path)]
             print('_common_dirname: dirs=', dirnames)
             if len(set(dirnames)) == 1:
                 return dirnames[0]
