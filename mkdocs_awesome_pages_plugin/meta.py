@@ -88,6 +88,6 @@ class Meta:
                                 context=path)
                     )
 
-            print('arrange:', self.path, arrange)
+            print('arrange:', path, arrange)
             return Meta(title=title, arrange=arrange, path=path,
                         collapse=collapse, collapse_single_pages=collapse_single_pages, hide=hide)
