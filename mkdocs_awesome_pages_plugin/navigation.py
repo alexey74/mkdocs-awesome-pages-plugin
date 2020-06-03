@@ -130,6 +130,7 @@ class NavigationMeta:
 
         root_path = self._gather_metadata(items)
         self.root = Meta.try_load_from(join_paths(root_path, self.options.filename))
+        print ('navigation meta:', items, root_path, self.root, self.options.filename)
 
     def _gather_metadata(self, items: List[NavigationItem]) -> Optional[str]:
         paths = []
