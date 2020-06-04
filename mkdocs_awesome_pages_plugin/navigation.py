@@ -96,12 +96,9 @@ class AwesomeNavigation:
         return self._collapse(section, meta.collapse, collapse_recursive)
 
     def _get_item_path(self, item: NavigationItem) -> Optional[str]:
-        print('_get_item_path:', item)
         if isinstance(item, Section):
-            print('section item path:', self.meta.sections[item].path)
             return dirname(self.meta.sections[item].path)
         elif isinstance(item, Page):
-            print('page item path:', item.file.abs_src_path)
             return item.file.abs_src_path
 
     @staticmethod
@@ -133,7 +130,6 @@ class NavigationMeta:
 
         root_path = self._gather_metadata(items)
         self.root = Meta.try_load_from(join_paths(root_path, self.options.filename))
-        print ('navigation meta:', items, root_path, self.root, self.options.filename)
 
     def _gather_metadata(self, items: List[NavigationItem]) -> Optional[str]:
         paths = []
@@ -149,9 +145,7 @@ class NavigationMeta:
 
     @staticmethod
     def _common_dirname(paths: List[Optional[str]]) -> Optional[str]:
-        print('_common_dirname:', paths)
         if paths:
             dirnames = [dirname(path) for path in paths if dirname(path)]
-            print('_common_dirname: dirs=', dirnames)
             if len(set(dirnames)) == 1:
                 return dirnames[0]

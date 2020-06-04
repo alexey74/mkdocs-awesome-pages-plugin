@@ -16,7 +16,6 @@ GetKeyCallable = Callable[[T], Optional[str]]
 
 def arrange(entries: List[T], config: List[str], get_key: GetKeyCallable = lambda x: x) -> List[T]:
     grouped = _group(entries, get_key)
-    print('grouped:', grouped)
     rest_index = None
     result = []
 
